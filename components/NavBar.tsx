@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <nav className={twMerge(`sticky top-0 z-10 flex items-center justify-end bg-transparent px-5 py-3 text-[#616D8A] duration-200 dark:text-white md:px-10 md:py-5`, navBg && 'md:justify-center md:py-2')}>
-      <ul className={twMerge('hidden gap-6 text-lg md:flex', navBg && 'gap-4 rounded-xl border-2 border-black-primary bg-white p-4 text-black-primary shadow-nav-card')}>
+      <ul className={twMerge('hidden gap-6 text-lg md:flex', navBg && 'gap-4 rounded-xl border-2 border-black bg-white p-4 text-black shadow-nav-card')}>
         {navLinks.map((link, index) => (
           <TransitionLink key={index} href={link.href} label={link.name} />
         ))}
@@ -62,7 +62,7 @@ export default function Navbar() {
             animatePageOut(navigationRoutes[pathName as Routes], router);
           }}
           className={twMerge(
-            'fixed top-0 my-4 hidden h-16 w-16 -rotate-120 cursor-pointer rounded-full border-4 border-black-primary bg-yellow-primary duration-150 hover:-rotate-90 md:right-16 md:block'
+            'fixed top-0 my-4 hidden h-16 w-16 -rotate-120 cursor-pointer rounded-full border-4 border-black bg-pink-400 duration-150 hover:-rotate-90 md:right-16 md:block'
             // !isProject
             //   ? '-rotate-120 hover:-rotate-90 md:right-16'
             //   : 'rotate-120 hover:rotate-90 md:left-16',
@@ -101,14 +101,14 @@ export default function Navbar() {
           }}
           className="rounded-full border-2 bg-gray-100 p-1"
         >
-          <IconContext.Provider value={{ className: 'text-4xl text-black-primary p-2' }}>{isActive ? <RiCloseFill /> : <RxHamburgerMenu />}</IconContext.Provider>
+          <IconContext.Provider value={{ className: 'text-4xl text-black p-2' }}>{isActive ? <RiCloseFill /> : <RxHamburgerMenu />}</IconContext.Provider>
         </button>
       </div>
       <div className={twMerge('fixed top-12 flex h-full w-full justify-center overflow-x-hidden rounded transition-all duration-300 ease-in-out md:hidden', isActive ? 'right-0' : '-right-full')}>
         <ul className="m-5 flex h-fit w-full flex-col items-center gap-8 rounded-xl bg-gray-100 px-3 py-6 text-lg font-light">
           {navLinks.map((link, index) => (
             <li key={index} className="group relative w-fit cursor-pointer font-semibold text-[#616D8A]">
-              <span className="absolute bottom-0 h-1 w-0 rounded-md bg-orange-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
+              <span className="absolute bottom-0 h-1 w-0 rounded-md bg-pink-400 transition-all duration-300 ease-in-out group-hover:w-full"></span>
               <a href={link.href}>{link.name}</a>
             </li>
           ))}
@@ -119,7 +119,7 @@ export default function Navbar() {
                 return (
                   <li key={index}>
                     <a href={link.href} target="_blank" rel="noreferrer">
-                      <IconContext.Provider value={{ className: 'text-2xl text-black-primary' }}>
+                      <IconContext.Provider value={{ className: 'text-2xl text-black' }}>
                         <Icon />
                       </IconContext.Provider>
                     </a>

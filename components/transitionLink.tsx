@@ -20,7 +20,7 @@ const TransitionLink = ({ href, label }: Props) => {
 
   return (
     <li onClick={handleClick} className="group relative cursor-pointer font-semibold">
-      <span className={twMerge('absolute bottom-0 h-1 w-0 rounded-md bg-orange-primary transition-all duration-300 ease-in-out group-hover:w-full', pathname === href && 'w-full')}></span>
+      <span className={twMerge('absolute bottom-0 h-1 w-0 rounded-md bg-pink-400 transition-all duration-300 ease-in-out group-hover:w-full', pathname === href && 'w-full')}></span>
       <a>{label}</a>
     </li>
   );
